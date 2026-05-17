@@ -138,7 +138,65 @@ section{padding:100px 60px;}
   background:var(--gold);
 }
 
-/* ── RELATÓRIO / PORTAIS ── */
+/* ── PORTAL MOCKUP ── */
+.portal-mockup-shell{background:#0d1117;border:1px solid rgba(245,193,0,.2);border-radius:8px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.7);}
+.pm-browser-bar{background:#1a1f2e;padding:10px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,.06);}
+.pm-dots{display:flex;gap:6px;}
+.pm-dots span{width:10px;height:10px;border-radius:50%;background:#333;}
+.pm-dots span:nth-child(1){background:#ff5f57;}
+.pm-dots span:nth-child(2){background:#febc2e;}
+.pm-dots span:nth-child(3){background:#28c840;}
+.pm-url{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:1px;color:#666;background:#111;padding:4px 16px;border-radius:4px;flex:1;text-align:center;}
+.pm-viewport{height:380px;overflow:hidden;position:relative;}
+.pm-viewport::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(to top,#0d1117,transparent);pointer-events:none;z-index:2;}
+.pm-scroll-track{padding:0;will-change:transform;}
+.pm-header{background:#0f1623;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #F5C100;}
+.pm-ep-badge{width:28px;height:28px;background:#F5C100;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:13px;color:#000;margin-right:10px;}
+.pm-header-brand{display:flex;align-items:center;}
+.pm-brand-name{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:#fff;}
+.pm-brand-sub{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:2px;color:#F5C100;}
+.pm-obra-title{font-family:'Barlow',sans-serif;font-size:15px;font-weight:700;color:#fff;padding:16px 20px 8px;background:#111827;}
+.pm-meta-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#0d1117;padding:0 2px 2px;}
+.pm-meta-card{background:#111827;padding:10px 14px;}
+.pm-meta-label{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:1.5px;color:#666;text-transform:uppercase;margin-bottom:4px;}
+.pm-meta-val{font-size:11px;font-weight:600;color:#e5e7eb;}
+.pm-card{background:#f9fafb;margin:8px;border-radius:8px;padding:16px;color:#111;}
+.pm-card-title{font-size:13px;font-weight:700;color:#111;margin-bottom:12px;}
+.pm-fin-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.pm-fin-block{background:#1e2536;border-radius:6px;padding:12px;}
+.pm-fin-label{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;color:#F5C100;margin-bottom:8px;}
+.pm-fin-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px;}
+.pm-fin-sub{font-size:8px;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px;}
+.pm-fin-val-w{font-size:11px;font-weight:700;color:#fff;}
+.pm-fin-val-g{font-size:11px;font-weight:700;color:#22c55e;}
+.pm-fin-val-y{font-size:11px;font-weight:700;color:#F5C100;}
+.pm-fin-val-p{font-size:11px;font-weight:700;color:#a78bfa;}
+.pm-progress-bar{height:3px;background:rgba(255,255,255,.1);border-radius:2px;margin-top:6px;overflow:hidden;}
+.pm-progress-fill{height:100%;border-radius:2px;}
+.pm-progress-fill.green{background:#22c55e;}
+.pm-progress-fill.purple{background:#a78bfa;}
+.pm-progress-fill.gold{background:#F5C100;}
+.pm-progress-fill.gray{background:#6b7280;}
+.pm-resumo-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.pm-resumo-pos{background:#f0fdf4;border-radius:6px;padding:10px;}
+.pm-resumo-atc{background:#fffbeb;border-radius:6px;padding:10px;}
+.pm-resumo-label-pos{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;color:#16a34a;margin-bottom:6px;}
+.pm-resumo-label-atc{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;color:#d97706;margin-bottom:6px;}
+.pm-resumo-item{font-size:10px;color:#374151;margin-bottom:3px;line-height:1.4;}
+.pm-avanco-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
+.pm-avanco-box{background:#f3f4f6;border-radius:6px;padding:10px;}
+.pm-avanco-sub{font-size:9px;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.pm-avanco-num{font-family:'Bebas Neue',sans-serif;font-size:28px;color:#374151;line-height:1;margin-bottom:4px;}
+.pm-avanco-num.gold{color:#F5C100;}
+.pm-etapas-title{font-size:11px;font-weight:600;color:#374151;margin-bottom:8px;}
+.pm-etapa-row{display:grid;grid-template-columns:100px 1fr 36px;gap:8px;align-items:center;margin-bottom:5px;}
+.pm-etapa-row span:first-child{font-size:10px;color:#6b7280;}
+.pm-etapa-bar{height:6px;background:#e5e7eb;border-radius:3px;overflow:hidden;}
+.pm-etapa-bar div{height:100%;border-radius:3px;}
+.pm-etapa-pct{font-size:10px;font-weight:600;text-align:right;}
+.pm-etapa-pct.green{color:#16a34a;}
+.pm-etapa-pct.gold{color:#d97706;}
+.pm-etapa-pct.muted{color:#9ca3af;}
 /* CHANGE 4: seção reformulada com portais e app */
 #relatorio{background:var(--dark);}
 .relatorio-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:64px;}
@@ -234,12 +292,12 @@ footer{background:var(--black);border-top:1px solid rgba(245,193,0,.1);padding:4
     </div>
     <div class="hero-stats reveal">
       <div class="hero-stat">
-        <div class="hero-stat-num">+50</div>
-        <div class="hero-stat-label">Obras entregues</div>
+        <div class="hero-stat-num">+100km²</div>
+        <div class="hero-stat-label">Construídos</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">100%</div>
-        <div class="hero-stat-label">Transparência ao cliente</div>
+        <div class="hero-stat-num" style="font-size:32px;line-height:1.2;">São Paulo</div>
+        <div class="hero-stat-label">Atuação em toda a cidade</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">2</div>
@@ -262,8 +320,8 @@ footer{background:var(--black);border-top:1px solid rgba(245,193,0,.1);padding:4
         </div>
         <div>
           <div class="sobre-name">Matheus Emanuel</div>
-          <div class="sobre-role">Engenheiro Civil · Diretor de Engenharia</div>
-          <p class="sobre-bio">Engenheiro Civil com sólida experiência em gerenciamento e execução de obras residenciais de alto padrão. Responsável pela gestão técnica, financeira e pelo relacionamento com clientes, arquitetos e incorporadoras.</p>
+          <div class="sobre-role">Engenheiro Civil · Sócio-Fundador</div>
+          <p class="sobre-bio">Engenheiro Civil com especialização em Viabilidade de Empreendimentos e Incorporações Imobiliárias pela FGV. MBA em Gestão de Incorporações e Construções Imobiliárias. Experiência em mais de 100.000 m² de construções de médio e alto padrão em São Paulo.</p>
         </div>
       </div>
       <div class="sobre-card reveal">
@@ -272,9 +330,9 @@ footer{background:var(--black);border-top:1px solid rgba(245,193,0,.1);padding:4
           <div class="sobre-photo-placeholder"><span>R</span></div>
         </div>
         <div>
-          <div class="sobre-name">Rogério</div>
-          <div class="sobre-role">Mestre de Obras · Diretor Operacional</div>
-          <p class="sobre-bio">Profissional experiente em gestão de equipes, controle de efetivo e execução de obras complexas. Garante que cada detalhe do canteiro esteja alinhado ao padrão Emanuel Praes de qualidade e segurança.</p>
+          <div class="sobre-name">Rogério Praes</div>
+          <div class="sobre-role">Administrador · Sócio-Fundador</div>
+          <p class="sobre-bio">Formado em Administração com ênfase em Marketing. Mais de 20 anos no mercado imobiliário. Supervisionou operações que ultrapassaram R$ 1 bilhão em vendas em 2024, somando mais de R$ 12 bilhões em VGV ao longo da carreira.</p>
         </div>
       </div>
     </div>
@@ -460,11 +518,94 @@ footer{background:var(--black);border-top:1px solid rgba(245,193,0,.1);padding:4
         </ul>
       </div>
       <div class="relatorio-mockup reveal">
-        <!-- IMAGEM DO RELATÓRIO: substitua pela URL do print do relatório -->
-        <div style="background:var(--dark2);border:1px solid rgba(245,193,0,.2);padding:40px;text-align:center;min-height:360px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;">
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:3px;color:var(--gold);opacity:.5;">PRINT DO RELATÓRIO</div>
-          <div style="font-size:13px;color:var(--gray);">Substitua este bloco pela imagem<br>do seu relatório semanal</div>
-        </div>
+        <!-- Portal mockup animado -->
+        <div class="portal-mockup-shell">
+          <!-- Browser chrome -->
+          <div class="pm-browser-bar">
+            <div class="pm-dots"><span></span><span></span><span></span></div>
+            <div class="pm-url">relatorios-obra-ep.vercel.app</div>
+          </div>
+          <!-- Portal content scrolling -->
+          <div class="pm-viewport">
+            <div class="pm-scroll-track" id="pmScroll">
+
+              <!-- Portal header -->
+              <div class="pm-header">
+                <div class="pm-header-brand">
+                  <div class="pm-ep-badge">EP</div>
+                  <div>
+                    <div class="pm-brand-name">Emanuel Praes</div>
+                    <div class="pm-brand-sub">RELATÓRIO DE OBRA</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Obra title -->
+              <div class="pm-obra-title">Residencial Lumière – Apto 142</div>
+              <div class="pm-meta-row">
+                <div class="pm-meta-card"><div class="pm-meta-label">🏠 TIPO</div><div class="pm-meta-val">Apartamento · Residencial</div></div>
+                <div class="pm-meta-card"><div class="pm-meta-label">📐 ÁREA</div><div class="pm-meta-val">187 m²</div></div>
+                <div class="pm-meta-card"><div class="pm-meta-label">📅 INÍCIO</div><div class="pm-meta-val">01/02/2026</div></div>
+                <div class="pm-meta-card"><div class="pm-meta-label">🎯 TÉRMINO</div><div class="pm-meta-val">30/11/2026</div></div>
+              </div>
+
+              <!-- Financeiro -->
+              <div class="pm-card">
+                <div class="pm-card-title">💰 Controle Financeiro</div>
+                <div class="pm-fin-grid">
+                  <div class="pm-fin-block">
+                    <div class="pm-fin-label">MÃO DE OBRA</div>
+                    <div class="pm-fin-row"><div><div class="pm-fin-sub">VALOR DO CONTRATO</div><div class="pm-fin-val-w">R$ 280.000,00</div></div><div><div class="pm-fin-sub">TOTAL RECEBIDO</div><div class="pm-fin-val-g">R$ 140.000,00</div></div></div>
+                    <div class="pm-fin-row"><div><div class="pm-fin-sub">SALDO A RECEBER</div><div class="pm-fin-val-y">R$ 140.000,00</div></div><div><div class="pm-fin-sub">% RECEBIDO</div><div class="pm-fin-val-y">50%</div></div></div>
+                    <div class="pm-progress-bar"><div class="pm-progress-fill green" style="width:50%"></div></div>
+                  </div>
+                  <div class="pm-fin-block">
+                    <div class="pm-fin-label">MATERIAL</div>
+                    <div class="pm-fin-row"><div><div class="pm-fin-sub">VALOR ESTIMADO</div><div class="pm-fin-val-w">R$ 320.000,00</div></div><div><div class="pm-fin-sub">TOTAL REALIZADO</div><div class="pm-fin-val-p">R$ 54.400,00</div></div></div>
+                    <div class="pm-fin-row"><div><div class="pm-fin-sub">SALDO DISPONÍVEL</div><div class="pm-fin-val-y">R$ 265.600,00</div></div><div><div class="pm-fin-sub">% CONSUMIDO</div><div class="pm-fin-val-p">17%</div></div></div>
+                    <div class="pm-progress-bar"><div class="pm-progress-fill purple" style="width:17%"></div></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Resumo semana -->
+              <div class="pm-card">
+                <div class="pm-card-title">📋 Resumo — Semana 4</div>
+                <div class="pm-resumo-grid">
+                  <div class="pm-resumo-pos">
+                    <div class="pm-resumo-label-pos">✅ PONTOS POSITIVOS</div>
+                    <div class="pm-resumo-item">• Estrutura de gesso concluída no prazo</div>
+                    <div class="pm-resumo-item">• Instalações hidráulicas aprovadas</div>
+                    <div class="pm-resumo-item">• Antecipação de 3 dias no cronograma</div>
+                  </div>
+                  <div class="pm-resumo-atc">
+                    <div class="pm-resumo-label-atc">⚠️ PONTOS DE ATENÇÃO</div>
+                    <div class="pm-resumo-item">• Aguardando entrega de revestimento</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Avanço físico -->
+              <div class="pm-card">
+                <div class="pm-card-title">📈 Avanço Físico</div>
+                <div class="pm-avanco-row">
+                  <div class="pm-avanco-box"><div class="pm-avanco-sub">PREVISTO</div><div class="pm-avanco-num">38%</div><div class="pm-progress-bar"><div class="pm-progress-fill gray" style="width:38%"></div></div></div>
+                  <div class="pm-avanco-box"><div class="pm-avanco-sub">REALIZADO</div><div class="pm-avanco-num gold">43%</div><div class="pm-progress-bar"><div class="pm-progress-fill gold" style="width:43%"></div></div></div>
+                </div>
+                <div class="pm-etapas-title">Status por Etapa</div>
+                <div class="pm-etapa-row"><span>Demolição</span><div class="pm-etapa-bar"><div style="width:100%;background:#22c55e"></div></div><span class="pm-etapa-pct green">100%</span></div>
+                <div class="pm-etapa-row"><span>Instalações</span><div class="pm-etapa-bar"><div style="width:84%;background:#F5C100"></div></div><span class="pm-etapa-pct gold">84%</span></div>
+                <div class="pm-etapa-row"><span>Construção</span><div class="pm-etapa-bar"><div style="width:100%;background:#22c55e"></div></div><span class="pm-etapa-pct green">100%</span></div>
+                <div class="pm-etapa-row"><span>Elétrica</span><div class="pm-etapa-bar"><div style="width:65%;background:#F5C100"></div></div><span class="pm-etapa-pct gold">65%</span></div>
+                <div class="pm-etapa-row"><span>Revestimentos</span><div class="pm-etapa-bar"><div style="width:20%;background:#F5C100"></div></div><span class="pm-etapa-pct gold">20%</span></div>
+                <div class="pm-etapa-row"><span>Forro & Drywall</span><div class="pm-etapa-bar"><div style="width:100%;background:#22c55e"></div></div><span class="pm-etapa-pct green">100%</span></div>
+                <div class="pm-etapa-row"><span>Pintura</span><div class="pm-etapa-bar"><div style="width:0%"></div></div><span class="pm-etapa-pct muted">0%</span></div>
+                <div class="pm-etapa-row"><span>Entrega</span><div class="pm-etapa-bar"><div style="width:0%"></div></div><span class="pm-etapa-pct muted">0%</span></div>
+              </div>
+
+            </div><!-- /pm-scroll-track -->
+          </div><!-- /pm-viewport -->
+        </div><!-- /portal-mockup-shell -->
       </div>
     </div>
 
@@ -527,7 +668,7 @@ footer{background:var(--black);border-top:1px solid rgba(245,193,0,.1);padding:4
         </ul>
         <div class="app-badge">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5C100" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          <span class="app-badge-text">Entregue via WhatsApp / E-mail</span>
+          <span class="app-badge-text">Via Portal do Cliente</span>
         </div>
       </div>
 
@@ -597,7 +738,34 @@ footer{background:var(--black);border-top:1px solid rgba(245,193,0,.1);padding:4
 </footer>
 
 <script>
-// ── Scroll Reveal ──
+// ── Portal mockup auto-scroll ──
+(function() {
+  const track = document.getElementById('pmScroll');
+  if (!track) return;
+  const viewport = track.closest('.pm-viewport');
+  let pos = 0;
+  let dir = 1;
+  let paused = false;
+  const speed = 0.6; // px per frame
+
+  function tick() {
+    if (!paused) {
+      const maxScroll = track.scrollHeight - viewport.clientHeight;
+      pos += speed * dir;
+      if (pos >= maxScroll) { dir = -1; pos = maxScroll; }
+      if (pos <= 0) { dir = 1; pos = 0; }
+      track.style.transform = `translateY(${-pos}px)`;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // Pause on hover
+  viewport.addEventListener('mouseenter', () => paused = true);
+  viewport.addEventListener('mouseleave', () => paused = false);
+
+  // Start after a short delay
+  setTimeout(tick, 1200);
+})();
 const reveals = document.querySelectorAll('.reveal');
 const obs = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
