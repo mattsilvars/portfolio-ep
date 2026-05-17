@@ -255,6 +255,113 @@ footer{background:var(--black);border-top:1px solid rgba(245,193,0,.1);padding:4
 .footer-text{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);}
 .footer-ig{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color .3s;}
 .footer-ig:hover{color:var(--gold);}
+/* ══════════════════════════════
+   HAMBURGER BUTTON
+══════════════════════════════ */
+.nav-hamburger{display:none;flex-direction:column;justify-content:space-between;width:28px;height:20px;background:none;border:none;cursor:pointer;padding:0;z-index:300;}
+.nav-hamburger span{display:block;width:100%;height:2px;background:var(--white);border-radius:2px;transition:all .3s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(9px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-9px) rotate(-45deg);}
+
+/* ══════════════════════════════
+   MOBILE — max 768px
+══════════════════════════════ */
+@media(max-width:768px){
+
+  /* NAV */
+  nav{padding:16px 20px;}
+  .nav-links{
+    display:none;
+    position:fixed;
+    top:0;left:0;right:0;bottom:0;
+    background:rgba(10,10,10,0.98);
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:32px;
+    z-index:150;
+  }
+  .nav-links.open{display:flex;}
+  .nav-links a{font-size:20px;letter-spacing:3px;}
+  .nav-cta{display:none;}
+  .nav-hamburger{display:flex;}
+
+  /* HERO */
+  #hero{padding:100px 24px 60px;}
+  .hero-inner{grid-template-columns:1fr;gap:40px;}
+  .hero-title{font-size:clamp(52px,14vw,80px);}
+  .hero-sub{font-size:15px;}
+  .hero-stats{flex-direction:row;flex-wrap:wrap;gap:20px;}
+  .hero-stat{flex:1;min-width:120px;}
+  .hero-stat-num{font-size:36px;}
+  .hero-buttons{flex-direction:column;}
+  .btn-gold,.btn-outline{justify-content:center;padding:14px 24px;}
+
+  /* SECTIONS */
+  section{padding:64px 24px;}
+  .section-inner{max-width:100%;}
+  .section-title{font-size:clamp(32px,9vw,52px);}
+
+  /* SOBRE */
+  .sobre-grid{grid-template-columns:1fr;gap:40px;}
+  .sobre-card{grid-template-columns:120px 1fr;gap:20px;}
+  .sobre-photo{width:120px;height:240px;}
+
+  /* SERVIÇOS */
+  .servicos-grid{grid-template-columns:1fr;}
+  .servico-card{padding:36px 24px;}
+
+  /* CASES */
+  .cases-grid{grid-template-columns:1fr;}
+  .case-card{aspect-ratio:16/10;}
+
+  /* VÍDEOS */
+  .videos-grid{grid-template-columns:1fr;gap:32px;}
+  .reel-wrapper{height:420px;}
+  .reel-wrapper iframe{height:660px;}
+
+  /* RELATÓRIO */
+  .relatorio-intro{grid-template-columns:1fr;gap:40px;}
+  .portais-grid{grid-template-columns:1fr;}
+  .portal-card{padding:32px 24px;}
+
+  /* PORTAL MOCKUP */
+  .pm-meta-row{grid-template-columns:1fr 1fr;}
+  .pm-fin-grid{grid-template-columns:1fr;}
+  .pm-avanco-row{grid-template-columns:1fr 1fr;}
+
+  /* DIFERENCIAIS */
+  .dif-grid{grid-template-columns:1fr 1fr;gap:24px;}
+
+  /* CONTATO */
+  #contato{padding:64px 24px;}
+  .contato-title{font-size:clamp(36px,10vw,60px);}
+
+  /* FOOTER */
+  footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px;}
+
+  /* CLIENTES MARQUEE */
+  .marquee-track::before,.marquee-track::after{width:40px;}
+  .client-logo{padding:0 28px;}
+}
+
+/* ══════════════════════════════
+   TABLET — max 1024px
+══════════════════════════════ */
+@media(max-width:1024px) and (min-width:769px){
+  nav{padding:18px 32px;}
+  #hero{padding:100px 40px 60px;}
+  .hero-inner{grid-template-columns:1fr;gap:48px;}
+  .hero-stats{flex-direction:row;gap:32px;}
+  section{padding:80px 40px;}
+  .sobre-grid{gap:48px;}
+  .servicos-grid{grid-template-columns:1fr 1fr;}
+  .portais-grid{grid-template-columns:1fr;}
+  .dif-grid{grid-template-columns:repeat(2,1fr);}
+  .relatorio-intro{grid-template-columns:1fr;}
+  footer{padding:32px 40px;}
+}
 </style>
 </head>
 <body>
@@ -265,15 +372,18 @@ footer{background:var(--black);border-top:1px solid rgba(245,193,0,.1);padding:4
     <div class="nav-logo-box"><span>EP</span></div>
     <div class="nav-logo-text"><strong>Emanuel Praes</strong>Inteligência em Engenharia</div>
   </a>
-  <ul class="nav-links">
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#cases">Cases</a></li>
-    <li><a href="#videos">Vídeos</a></li>
-    <li><a href="#relatorio">Relatório</a></li>
-    <li><a href="#contato">Contato</a></li>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#sobre" onclick="closeNav()">Sobre</a></li>
+    <li><a href="#servicos" onclick="closeNav()">Serviços</a></li>
+    <li><a href="#cases" onclick="closeNav()">Cases</a></li>
+    <li><a href="#videos" onclick="closeNav()">Vídeos</a></li>
+    <li><a href="#relatorio" onclick="closeNav()">Relatório</a></li>
+    <li><a href="#contato" onclick="closeNav()">Contato</a></li>
   </ul>
   <a class="nav-cta" href="https://wa.me/5511989152990" target="_blank">Falar Conosco</a>
+  <button class="nav-hamburger" id="navHamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- ══ HERO ══ -->
@@ -303,7 +413,7 @@ footer{background:var(--black);border-top:1px solid rgba(245,193,0,.1);padding:4
     </div>
     <div class="hero-stats reveal">
       <div class="hero-stat">
-        <div class="hero-stat-num">+100k m²</div>
+        <div class="hero-stat-num">+100km²</div>
         <div class="hero-stat-label">Construídos</div>
       </div>
       <div class="hero-stat">
@@ -772,6 +882,20 @@ footer{background:var(--black);border-top:1px solid rgba(245,193,0,.1);padding:4
 </footer>
 
 <script>
+// ── Hamburger menu ──
+function toggleNav() {
+  const links = document.getElementById('navLinks');
+  const btn = document.getElementById('navHamburger');
+  links.classList.toggle('open');
+  btn.classList.toggle('open');
+  document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+}
+function closeNav() {
+  document.getElementById('navLinks').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 // ── Portal mockup auto-scroll ──
 (function() {
   const track = document.getElementById('pmScroll');
